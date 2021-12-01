@@ -1,0 +1,116 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   14 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "sfEvent"\
+      Description  "ActiveChartEvent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_c3_motor_channel"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_c3_motor_channel"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_COM_CMD"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "MOTOR_CTRL.COM_CMD"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_COM_CMD"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         "MOTOR_CTRL.COM_CMD"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_KEY_CMD"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "MOTOR_CTRL.KEY_CMD"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_KEY_CMD"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         "MOTOR_CTRL.KEY_CMD"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_DOWN_KEY_PRESSED"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "MOTOR_CTRL.KEY_CMD.DOWN_KEY_PRESSED"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_UP_KEY_PRESSED"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "MOTOR_CTRL.KEY_CMD.UP_KEY_PRESSED"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_MOTOR"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "MOTOR_CTRL.MOTOR"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_MOTOR"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         "MOTOR_CTRL.MOTOR"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i1"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i2"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i3"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction
