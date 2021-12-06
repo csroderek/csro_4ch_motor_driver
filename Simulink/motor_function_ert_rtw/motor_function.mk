@@ -2,7 +2,7 @@
 ## Makefile generated for component 'motor_function'. 
 ## 
 ## Makefile     : motor_function.mk
-## Generated on : Wed Dec 01 16:11:22 2021
+## Generated on : Thu Dec 02 13:26:11 2021
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/motor_function.exe
 ## Product type : executable
 ## 
@@ -185,7 +185,7 @@ PREBUILT_OBJS =
 
 MODELREF_LIBS = C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Simulink/slprj/ert/motor_channel/motor_channel_rtwlib.lib
 
-LIBS = 
+LIBS = $(START_DIR)/slprj/ert/_sharedutils/rtwshared.lib
 
 ###########################################################################
 ## SYSTEM LIBRARIES
@@ -223,7 +223,7 @@ all : build
 build : prebuild $(PRODUCT)
 
 
-buildobj : prebuild $(OBJS) $(PREBUILT_OBJS)
+buildobj : prebuild $(OBJS) $(PREBUILT_OBJS) $(LIBS)
 	@echo "### Successfully generated all binary outputs."
 
 
@@ -247,9 +247,9 @@ execute : download
 # Create a standalone executable            
 #-------------------------------------------
 
-$(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MODELREF_LIBS) $(MAIN_OBJ)
+$(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MODELREF_LIBS) $(LIBS) $(MAIN_OBJ)
 	@echo "### Creating standalone executable "$(PRODUCT)" ..."
-	$(LD) $(LDFLAGS) -o $(PRODUCT) @$(CMD_FILE) @$(MODELREF_LINK_RSPFILE) $(subst /,\,$(subst /,\,$(SYSTEM_LIBS))) $(subst /,\,$(subst /,\,$(TOOLCHAIN_LIBS)))
+	$(LD) $(LDFLAGS) -o $(PRODUCT) @$(CMD_FILE) @$(MODELREF_LINK_RSPFILE) $(subst /,\,$(subst /,\,$(LIBS))) $(subst /,\,$(subst /,\,$(SYSTEM_LIBS))) $(subst /,\,$(subst /,\,$(TOOLCHAIN_LIBS)))
 	@echo "### Created: $(PRODUCT)"
 
 

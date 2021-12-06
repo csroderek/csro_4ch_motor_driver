@@ -9,11 +9,21 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include Simulink/slprj/ert/motor_channel/subdir.mk
+-include Simulink/slprj/ert/change_monitor/subdir.mk
+-include Simulink/slprj/ert/_sharedutils/subdir.mk
+-include Simulink/motor_param_persist_ert_rtw/subdir.mk
+-include Simulink/motor_function_ert_rtw/subdir.mk
+-include Modbus_RTU/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
+-include Csro/fnd_output/subdir.mk
+-include Csro/fnd_input/subdir.mk
+-include Csro/fnd_eeprom/subdir.mk
+-include Csro/fnd_com/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk

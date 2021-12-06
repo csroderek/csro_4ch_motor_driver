@@ -1,0 +1,2 @@
+fnd_input_gpio.c:10:6:fnd_input_gpio_read_keys	24	static
+fnd_input_gpio.c:18:6:fnd_input_gpio_read_btns	24	static
