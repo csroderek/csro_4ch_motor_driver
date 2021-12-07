@@ -190,6 +190,7 @@ void StartTask02(void *argument)
 void StartTask03(void *argument)
 {
   /* USER CODE BEGIN StartTask03 */
+  motor_param_persist_initialize();
   motor_function_initialize();
   /* Infinite loop */
   for (;;)
@@ -197,6 +198,7 @@ void StartTask03(void *argument)
     osDelay(10);
     fnd_input_update_value();
     motor_function_step();
+    fnd_output_update_value(relay);
   }
   /* USER CODE END StartTask03 */
 }
@@ -211,11 +213,17 @@ void StartTask03(void *argument)
 void StartTask04(void *argument)
 {
   /* USER CODE BEGIN StartTask04 */
+  uint8_t count = 0;
   /* Infinite loop */
   for (;;)
   {
     osDelay(200);
     HAL_GPIO_TogglePin(LED_01_GPIO_Port, LED_01_Pin);
+    count = (count + 1) % 50;
+    if (count == 0)
+    {
+      motor_param_persist_step();
+    }
   }
   /* USER CODE END StartTask04 */
 }

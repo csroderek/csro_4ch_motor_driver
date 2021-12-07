@@ -12,6 +12,19 @@
 
 typedef struct
 {
+    int16_T up_relay;
+    int16_T down_relay;
+    int16_T up_relay_g;
+    int16_T down_relay_d;
+    int16_T up_relay_j;
+    int16_T down_relay_j;
+    int16_T up_relay_j2;
+    int16_T down_relay_g;
+}
+B_motor_function_T;
+
+typedef struct
+{
     MdlrefDW_motor_channel_T Model_InstanceData;
     MdlrefDW_motor_channel_T Model1_InstanceData;
     MdlrefDW_motor_channel_T Model2_InstanceData;
@@ -28,22 +41,9 @@ typedef struct
 }
 InstP_motor_function_T;
 
-typedef struct
-{
-    int16_T relay1;
-    int16_T relay2;
-    int16_T relay3;
-    int16_T relay4;
-    int16_T relay5;
-    int16_T relay6;
-    int16_T relay7;
-    int16_T relay8;
-}
-ExtY_motor_function_T;
-
+extern B_motor_function_T motor_function_B;
 extern DW_motor_function_T motor_function_DW;
 extern InstP_motor_function_T motor_function_InstP;
-extern ExtY_motor_function_T motor_function_Y;
 extern void motor_function_initialize(void);
 extern void motor_function_step(void);
 extern void motor_function_terminate(void);

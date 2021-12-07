@@ -35,8 +35,8 @@ InstP_motor_function_T motor_function_InstP =
     }
 };
 
+B_motor_function_T motor_function_B;
 DW_motor_function_T motor_function_DW;
-ExtY_motor_function_T motor_function_Y;
 extern const int16_T rtCP_pooled_i2hU6p9uLH6V[5];
 
 #define rtCP_Constant_Value            rtCP_pooled_i2hU6p9uLH6V
@@ -82,8 +82,8 @@ void motor_function_step(void)
 
     rtb_com_only3 = sys_regs.holdings[37];
     motor_channel(&(motor_function_DW.Model_InstanceData.rtm), &rtb_DataStoreRead_o1[0], &rtb_DataStoreRead_o2[0], &rtb_DataStoreRead3_o3[0],
-                  &rtCP_Constant_Value[0], &rtCP_Constant_Value[0], &rtCP_Constant_Value[0], &rtb_com_only3, &motor_function_Y.relay1,
-                  &motor_function_Y.relay2, &(motor_function_DW.Model_InstanceData.rtdw));
+                  &rtCP_Constant_Value[0], &rtCP_Constant_Value[0], &rtCP_Constant_Value[0], &rtb_com_only3, &motor_function_B.up_relay,
+                  &motor_function_B.down_relay, &(motor_function_DW.Model_InstanceData.rtdw));
     rtb_DataStoreRead_o1[0] = sys_regs.inputs[102];
     rtb_DataStoreRead_o2[0] = sys_regs.inputs[108];
     rtb_DataStoreRead_o1[1] = sys_regs.inputs[103];
@@ -95,8 +95,8 @@ void motor_function_step(void)
 
     rtb_com_only3 = sys_regs.holdings[37];
     motor_channel(&(motor_function_DW.Model1_InstanceData.rtm), &rtb_DataStoreRead_o1[0], &rtb_DataStoreRead_o2[0], &rtb_DataStoreRead3_o3[0],
-                  &rtCP_Constant23_Value[0], &rtCP_Constant23_Value[0], &rtCP_Constant23_Value[0], &rtb_com_only3, &motor_function_Y.relay3,
-                  &motor_function_Y.relay4, &(motor_function_DW.Model1_InstanceData.rtdw));
+                  &rtCP_Constant23_Value[0], &rtCP_Constant23_Value[0], &rtCP_Constant23_Value[0], &rtb_com_only3,
+                  &motor_function_B.up_relay_g, &motor_function_B.down_relay_d, &(motor_function_DW.Model1_InstanceData.rtdw));
     rtb_DataStoreRead_o1[0] = sys_regs.inputs[104];
     rtb_DataStoreRead_o2[0] = sys_regs.inputs[108];
     rtb_DataStoreRead_o1[1] = sys_regs.inputs[105];
@@ -108,8 +108,8 @@ void motor_function_step(void)
 
     rtb_com_only3 = sys_regs.holdings[37];
     motor_channel(&(motor_function_DW.Model2_InstanceData.rtm), &rtb_DataStoreRead_o1[0], &rtb_DataStoreRead_o2[0], &rtb_DataStoreRead3_o3[0],
-                  &rtCP_Constant26_Value[0], &rtCP_Constant26_Value[0], &rtCP_Constant26_Value[0], &rtb_com_only3, &motor_function_Y.relay5,
-                  &motor_function_Y.relay6, &(motor_function_DW.Model2_InstanceData.rtdw));
+                  &rtCP_Constant26_Value[0], &rtCP_Constant26_Value[0], &rtCP_Constant26_Value[0], &rtb_com_only3,
+                  &motor_function_B.up_relay_j, &motor_function_B.down_relay_j, &(motor_function_DW.Model2_InstanceData.rtdw));
     rtb_DataStoreRead_o1[0] = sys_regs.inputs[106];
     rtb_DataStoreRead_o2[0] = sys_regs.inputs[108];
     rtb_DataStoreRead_o1[1] = sys_regs.inputs[107];
@@ -121,8 +121,16 @@ void motor_function_step(void)
 
     rtb_com_only3 = sys_regs.holdings[37];
     motor_channel(&(motor_function_DW.Model3_InstanceData.rtm), &rtb_DataStoreRead_o1[0], &rtb_DataStoreRead_o2[0], &rtb_DataStoreRead3_o3[0],
-                  &rtCP_Constant29_Value[0], &rtCP_Constant29_Value[0], &rtCP_Constant29_Value[0], &rtb_com_only3, &motor_function_Y.relay7,
-                  &motor_function_Y.relay8, &(motor_function_DW.Model3_InstanceData.rtdw));
+                  &rtCP_Constant29_Value[0], &rtCP_Constant29_Value[0], &rtCP_Constant29_Value[0], &rtb_com_only3,
+                  &motor_function_B.up_relay_j2, &motor_function_B.down_relay_g, &(motor_function_DW.Model3_InstanceData.rtdw));
+    relay[0] = motor_function_B.up_relay;
+    relay[1] = motor_function_B.down_relay;
+    relay[2] = motor_function_B.up_relay_g;
+    relay[3] = motor_function_B.down_relay_d;
+    relay[4] = motor_function_B.up_relay_j;
+    relay[5] = motor_function_B.down_relay_j;
+    relay[6] = motor_function_B.up_relay_j2;
+    relay[7] = motor_function_B.down_relay_g;
 }
 
 void motor_function_initialize(void)

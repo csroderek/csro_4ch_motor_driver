@@ -6,19 +6,14 @@
 #include "mb_master.h"
 
 #define INPUT_BTN_START 100
-#define INPUT_BTN_END 111
-
-#define INPUT_RMT_START 120
-#define INPUT_RMT_END 144
+#define INPUT_BTN_END 109
 
 #define INPUT_RLY_CTRL_START 150
 #define INPUT_RLY_CTRL_END 157
 
-#define HOLDING_COM_START 110
-#define HOLDING_COM_END 134
-
 extern modbus_regs sys_regs;
 extern modbus_slave slaves[2];
+extern int16_t relay[8];
 
 void fnd_com_modbus_rtu_init(void);
 void fnd_com_modbus_rtu_uart_idle_irq(UART_HandleTypeDef *huart);

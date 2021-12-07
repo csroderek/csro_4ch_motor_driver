@@ -10,9 +10,4 @@ void fnd_output_update_value(int16_t *values)
         relay_out_values[i] = (uint8_t)sys_regs.inputs[INPUT_RLY_CTRL_START + i];
     }
     fnd_output_gpio_write_relays(relay_out_values);
-
-    for (uint8_t i = 0; i < (HOLDING_COM_END - HOLDING_COM_START + 1); i++)
-    {
-        sys_regs.holdings[HOLDING_COM_START + i] = 0;
-    }
 }

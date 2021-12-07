@@ -14,27 +14,7 @@ uint8_t ee_ram[_EE_USE_RAM_BYTE];
 
 bool ee_init(void)
 {
-    bool result = ee_read(0, _EE_USE_RAM_BYTE, NULL);
-    if (result == false)
-    {
-        return false;
-    }
-    else if (ee_ram[100] != 1)
-    {
-        ee_ram[0] = 2 / 256;
-        ee_ram[1] = 2 % 256;
-        ee_ram[2] = 100 / 256;
-        ee_ram[3] = 100 % 256;
-        ee_ram[4] = 6000 / 256;
-        ee_ram[5] = 6000 % 256;
-        ee_ram[6] = 20 / 256;
-        ee_ram[7] = 20 % 256;
-        ee_ram[8] = 50 / 256;
-        ee_ram[9] = 50 % 256;
-        ee_ram[100] = 1;
-        return ee_commit();
-    }
-    return true;
+    return ee_read(0, _EE_USE_RAM_BYTE, NULL);
 }
 
 bool ee_format(bool keepRamData)
