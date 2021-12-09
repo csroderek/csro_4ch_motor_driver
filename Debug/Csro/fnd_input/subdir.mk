@@ -6,15 +6,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Csro/fnd_input/fnd_input.c \
-../Csro/fnd_input/fnd_input_gpio.c 
+../Csro/fnd_input/fnd_input_gpio.c \
+../Csro/fnd_input/fnd_input_remote.c 
 
 OBJS += \
 ./Csro/fnd_input/fnd_input.o \
-./Csro/fnd_input/fnd_input_gpio.o 
+./Csro/fnd_input/fnd_input_gpio.o \
+./Csro/fnd_input/fnd_input_remote.o 
 
 C_DEPS += \
 ./Csro/fnd_input/fnd_input.d \
-./Csro/fnd_input/fnd_input_gpio.d 
+./Csro/fnd_input/fnd_input_gpio.d \
+./Csro/fnd_input/fnd_input_remote.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +27,7 @@ Csro/fnd_input/%.o: ../Csro/fnd_input/%.c Csro/fnd_input/subdir.mk
 clean: clean-Csro-2f-fnd_input
 
 clean-Csro-2f-fnd_input:
-	-$(RM) ./Csro/fnd_input/fnd_input.d ./Csro/fnd_input/fnd_input.o ./Csro/fnd_input/fnd_input_gpio.d ./Csro/fnd_input/fnd_input_gpio.o
+	-$(RM) ./Csro/fnd_input/fnd_input.d ./Csro/fnd_input/fnd_input.o ./Csro/fnd_input/fnd_input_gpio.d ./Csro/fnd_input/fnd_input_gpio.o ./Csro/fnd_input/fnd_input_remote.d ./Csro/fnd_input/fnd_input_remote.o
 
 .PHONY: clean-Csro-2f-fnd_input
 

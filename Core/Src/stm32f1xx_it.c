@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "fnd_com.h"
+#include "fnd_input.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
