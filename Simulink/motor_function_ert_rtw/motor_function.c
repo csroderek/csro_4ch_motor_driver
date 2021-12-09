@@ -131,6 +131,11 @@ void motor_function_step(void)
     relay[5] = motor_function_B.down_relay_j;
     relay[6] = motor_function_B.up_relay_j2;
     relay[7] = motor_function_B.down_relay_g;
+    sys_regs.holdings[18] = 0;
+    sys_regs.holdings[0] = 0;
+    sys_regs.holdings[6] = 0;
+    sys_regs.holdings[24] = 0;
+    sys_regs.holdings[12] = 0;
 }
 
 void motor_function_initialize(void)

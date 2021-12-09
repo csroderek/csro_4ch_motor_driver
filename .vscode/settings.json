@@ -1,5 +1,6 @@
 {
   "files.associations": {
-    "ee_commit.h": "c"
+    "ee_commit.h": "c",
+    "fnd_com.h": "c"
   }
 }

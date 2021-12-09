@@ -25,8 +25,8 @@ Csro/fnd_com/fnd_com.o: ../Csro/fnd_com/fnd_com.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_slave.h \
- C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_config.h \
+ C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_slave.h \
+ C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_config.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
@@ -36,7 +36,7 @@ Csro/fnd_com/fnd_com.o: ../Csro/fnd_com/fnd_com.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
- C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_master.h \
+ C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_master.h \
  ../Core/Inc/usart.h ../Core/Inc/main.h ../Core/Inc/gpio.h
 
 ../Csro/fnd_com/fnd_com.h:
@@ -91,9 +91,9 @@ Csro/fnd_com/fnd_com.o: ../Csro/fnd_com/fnd_com.c \
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 
-C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_slave.h:
+C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_slave.h:
 
-C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_config.h:
+C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_config.h:
 
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
 
@@ -113,7 +113,7 @@ C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 
-C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_master.h:
+C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_master.h:
 
 ../Core/Inc/usart.h:
 

@@ -13,7 +13,7 @@ void motor_param_persist_step(void)
     rtb_DataStoreRead_o1 = sys_regs.holdings[100];
     rtb_DataStoreRead_o2 = sys_regs.holdings[101];
     rtb_DataStoreRead_o3 = sys_regs.holdings[102];
-    rtb_DataStoreRead_o4 = sys_regs.holdings[103];
+    rtb_DataStoreRead_o4 = sys_regs.holdings[36];
     rtb_DataStoreRead_o5 = sys_regs.holdings[104];
     change_monitor(&rtb_DataStoreRead_o1, &rtb_DataStoreRead_o2, &rtb_DataStoreRead_o3, &rtb_DataStoreRead_o4, &rtb_DataStoreRead_o5,
                    &rtb_Model, &(motor_param_persist_DW.Model_InstanceData.rtdw));
@@ -25,8 +25,8 @@ void motor_param_persist_step(void)
         ee_ram[3] = (uint8_T)(sys_regs.holdings[101] >> 8);
         ee_ram[4] = (uint8_T)(sys_regs.holdings[102] - (int16_T)((int16_T)div_nde_s32_floor(sys_regs.holdings[102], 256) << 8));
         ee_ram[5] = (uint8_T)(sys_regs.holdings[102] >> 8);
-        ee_ram[6] = (uint8_T)(sys_regs.holdings[103] - (int16_T)((int16_T)div_nde_s32_floor(sys_regs.holdings[103], 256) << 8));
-        ee_ram[7] = (uint8_T)(sys_regs.holdings[103] >> 8);
+        ee_ram[6] = (uint8_T)(sys_regs.holdings[36] - (int16_T)((int16_T)div_nde_s32_floor(sys_regs.holdings[36], 256) << 8));
+        ee_ram[7] = (uint8_T)(sys_regs.holdings[36] >> 8);
         ee_ram[8] = (uint8_T)(sys_regs.holdings[104] - (int16_T)((int16_T)div_nde_s32_floor(sys_regs.holdings[104], 256) << 8));
         ee_ram[9] = (uint8_T)(sys_regs.holdings[104] >> 8);
         ee_commit();
@@ -38,7 +38,7 @@ void motor_param_persist_initialize(void)
     sys_regs.holdings[100] = (int16_T)((int16_T)(ee_ram[1] << 8) + ee_ram[0]);
     sys_regs.holdings[101] = (int16_T)((int16_T)(ee_ram[3] << 8) + ee_ram[2]);
     sys_regs.holdings[102] = (int16_T)((int16_T)(ee_ram[5] << 8) + ee_ram[4]);
-    sys_regs.holdings[103] = (int16_T)((int16_T)(ee_ram[7] << 8) + ee_ram[6]);
+    sys_regs.holdings[36] = (int16_T)((int16_T)(ee_ram[7] << 8) + ee_ram[6]);
     sys_regs.holdings[104] = (int16_T)((int16_T)(ee_ram[9] << 8) + ee_ram[8]);
     if (ee_ram[100] != 1)
     {

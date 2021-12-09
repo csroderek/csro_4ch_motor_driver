@@ -2,7 +2,7 @@
 ## Makefile generated for component 'motor_param_persist'. 
 ## 
 ## Makefile     : motor_param_persist.mk
-## Generated on : Thu Dec 02 10:39:02 2021
+## Generated on : Thu Dec 09 20:56:57 2021
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/motor_param_persist.exe
 ## Product type : executable
 ## 
@@ -23,7 +23,7 @@ MAKEFILE                  = motor_param_persist.mk
 MATLAB_ROOT               = C:/PROGRA~1/POLYSP~1/R2021a
 MATLAB_BIN                = C:/PROGRA~1/POLYSP~1/R2021a/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Simulink
+START_DIR                 = C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Simulink
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
@@ -183,7 +183,7 @@ PREBUILT_OBJS =
 ## LIBRARIES
 ###########################################################################
 
-MODELREF_LIBS = C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Simulink/slprj/ert/change_monitor/change_monitor_rtwlib.lib
+MODELREF_LIBS = C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Simulink/slprj/ert/change_monitor/change_monitor_rtwlib.lib
 
 LIBS = $(START_DIR)/slprj/ert/_sharedutils/rtwshared.lib
 

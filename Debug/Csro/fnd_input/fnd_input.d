@@ -34,10 +34,10 @@ Csro/fnd_input/fnd_input.o: ../Csro/fnd_input/fnd_input.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
- C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Csro/fnd_com/fnd_com.h \
- C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_slave.h \
- C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_config.h \
- C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_master.h
+ C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Csro/fnd_com/fnd_com.h \
+ C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_slave.h \
+ C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_config.h \
+ C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_master.h
 
 ../Csro/fnd_input/fnd_input.h:
 
@@ -109,10 +109,10 @@ Csro/fnd_input/fnd_input.o: ../Csro/fnd_input/fnd_input.c \
 
 ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 
-C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Csro/fnd_com/fnd_com.h:
+C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Csro/fnd_com/fnd_com.h:
 
-C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_slave.h:
+C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_slave.h:
 
-C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_config.h:
+C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_config.h:
 
-C:/Users/Litao/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_master.h:
+C:/Users/Derek/STM32CubeIDE/workspace_1.8.0/csro_4ch_motor_driver/Modbus_RTU/mb_master.h:
