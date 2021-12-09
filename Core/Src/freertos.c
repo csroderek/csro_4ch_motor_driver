@@ -56,30 +56,30 @@
 /* Definitions for Task01 */
 osThreadId_t Task01Handle;
 const osThreadAttr_t Task01_attributes = {
-    .name = "Task01",
-    .stack_size = 256 * 4,
-    .priority = (osPriority_t)osPriorityHigh7,
+  .name = "Task01",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityHigh7,
 };
 /* Definitions for Task02 */
 osThreadId_t Task02Handle;
 const osThreadAttr_t Task02_attributes = {
-    .name = "Task02",
-    .stack_size = 256 * 4,
-    .priority = (osPriority_t)osPriorityHigh5,
+  .name = "Task02",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityHigh5,
 };
 /* Definitions for Task03 */
 osThreadId_t Task03Handle;
 const osThreadAttr_t Task03_attributes = {
-    .name = "Task03",
-    .stack_size = 128 * 4,
-    .priority = (osPriority_t)osPriorityHigh3,
+  .name = "Task03",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityHigh3,
 };
 /* Definitions for Task04 */
 osThreadId_t Task04Handle;
 const osThreadAttr_t Task04_attributes = {
-    .name = "Task04",
-    .stack_size = 128 * 4,
-    .priority = (osPriority_t)osPriorityHigh1,
+  .name = "Task04",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityHigh1,
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -95,12 +95,11 @@ void StartTask04(void *argument);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /**
- * @brief  FreeRTOS initialization
- * @param  None
- * @retval None
- */
-void MX_FREERTOS_Init(void)
-{
+  * @brief  FreeRTOS initialization
+  * @param  None
+  * @retval None
+  */
+void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
   fnd_com_modbus_rtu_init();
   ee_init();
@@ -142,6 +141,7 @@ void MX_FREERTOS_Init(void)
   /* USER CODE BEGIN RTOS_EVENTS */
   /* add events, ... */
   /* USER CODE END RTOS_EVENTS */
+
 }
 
 /* USER CODE BEGIN Header_StartTask01 */
@@ -232,3 +232,4 @@ void StartTask04(void *argument)
 /* USER CODE BEGIN Application */
 
 /* USER CODE END Application */
+
