@@ -1,2 +1,3 @@
-fnd_input_remote.c:6:6:fnd_input_remote_receive_pulse	4	static
-fnd_input_remote.c:10:6:HAL_GPIO_EXTI_Callback	16	static
+fnd_input_remote.c:14:13:compose_remote_data	40	static
+fnd_input_remote.c:31:13:remote_received_high_pulse	8	static
+fnd_input_remote.c:61:6:HAL_GPIO_EXTI_Callback	16	static
