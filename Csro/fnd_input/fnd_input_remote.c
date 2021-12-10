@@ -12,6 +12,7 @@ uint8_t cmd_index = 0;
 
 static void compose_and_process_remote_command(void)
 {
+    rmt_cmd[cmd_index] = 0;
     for (uint8_t i = 0; i < 40; i++)
     {
         if (bit_data[i] == 1)
