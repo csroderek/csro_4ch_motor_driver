@@ -12,7 +12,11 @@ modbus_port port[2] = {
 };
 modbus_regs sys_regs;
 modbus_slave slaves[2];
+
 int16_t relay[8];
+
+uint64_t rmt_cmd[20];
+uint8_t rmt_index;
 
 void fnd_com_modbus_rtu_init(void)
 {

@@ -1,30 +1,28 @@
 #include "fnd_input.h"
 #include "gpio.h"
 #include "tim.h"
+#include "fnd_com.h"
 
 uint16_t low_pulse = 0;
 uint16_t high_pulse = 0;
 
 uint8_t bit_data[40] = {0};
 
-uint64_t rmt_cmd[20] = {0};
-uint8_t cmd_index = 0;
-
 static void compose_and_process_remote_command(void)
 {
-    rmt_cmd[cmd_index] = 0;
+    rmt_cmd[rmt_index] = 0;
     for (uint8_t i = 0; i < 40; i++)
     {
         if (bit_data[i] == 1)
         {
-            rmt_cmd[cmd_index] = (rmt_cmd[cmd_index] << 1) | 0x01;
+            rmt_cmd[rmt_index] = (rmt_cmd[rmt_index] << 1) | 0x01;
         }
         else
         {
-            rmt_cmd[cmd_index] = (rmt_cmd[cmd_index] << 1) & 0xFFFFFFFFFFFFFFFE;
+            rmt_cmd[rmt_index] = (rmt_cmd[rmt_index] << 1) & 0xFFFFFFFFFFFFFFFE;
         }
     }
-    cmd_index = (cmd_index + 1) % 20;
+    rmt_index = (rmt_index + 1) % 20;
 }
 
 static void remote_receive_high_pulse(void)

@@ -13,7 +13,11 @@
 
 extern modbus_regs sys_regs;
 extern modbus_slave slaves[2];
+
 extern int16_t relay[8];
+
+extern uint64_t rmt_cmd[20];
+extern uint8_t rmt_index;
 
 void fnd_com_modbus_rtu_init(void);
 void fnd_com_modbus_rtu_uart_idle_irq(UART_HandleTypeDef *huart);
