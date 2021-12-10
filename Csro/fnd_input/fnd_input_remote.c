@@ -2,59 +2,56 @@
 #include "gpio.h"
 #include "tim.h"
 
-uint16_t low_dur = 0;
-uint16_t high_dur = 0;
+uint16_t low_pulse = 0;
+uint16_t high_pulse = 0;
 
-uint32_t compose_cnt = 0;
-uint8_t flag = 0;
-uint8_t data_index;
-uint8_t data[40] = {0};
-uint64_t code[20] = {0};
+uint8_t bit_data[40] = {0};
 
-static void compose_remote_data(void)
+uint64_t rmt_cmd[20] = {0};
+uint8_t cmd_index = 0;
+
+static void compose_and_process_remote_command(void)
 {
-	code[compose_cnt]= 0;
     for (uint8_t i = 0; i < 40; i++)
     {
-        if (data[i] == 1)
+        if (bit_data[i] == 1)
         {
-        	code[compose_cnt] = (code[compose_cnt] << 1) | 0x01;
+            rmt_cmd[cmd_index] = (rmt_cmd[cmd_index] << 1) | 0x01;
         }
         else
         {
-        	code[compose_cnt] = (code[compose_cnt] << 1) & 0xFFFFFFFFFFFFFFFE;
+            rmt_cmd[cmd_index] = (rmt_cmd[cmd_index] << 1) & 0xFFFFFFFFFFFFFFFE;
         }
     }
-    compose_cnt=(compose_cnt+1)%20;
+    cmd_index = (cmd_index + 1) % 20;
 }
 
-static void remote_received_high_pulse(void)
+static void remote_receive_high_pulse(void)
 {
-    static uint8_t valid = 0;
-    if (high_dur > 400 && high_dur < 600)
+    static uint8_t receiving = 0;
+    static uint8_t bit_index = 0;
+
+    uint8_t valid_0 = high_pulse > 20 && high_pulse < 40;
+    uint8_t valid_1 = high_pulse > 60 && high_pulse < 80;
+
+    if (high_pulse > 400 && high_pulse < 600)
     {
-        valid = 1;
-        data_index = 0;
+        receiving = 1;
+        bit_index = 0;
     }
-    else if (valid == 1 && high_dur > 20 && high_dur < 40)
+    else if (receiving == 1 && (valid_0 || valid_1))
     {
-        data[data_index] = 0;
-        data_index = (data_index + 1) % 40;
-        if (data_index == 0)
+        bit_data[bit_index] = valid_1 ? 1 : 0;
+        bit_index = (bit_index + 1) % 40;
+        if (bit_index == 0)
         {
-            valid = 0;
-            compose_remote_data();
+            receiving = 0;
+            compose_and_process_remote_command();
         }
     }
-    else if (valid == 1 && high_dur > 60 && high_dur < 80)
+    else
     {
-        data[data_index] = 1;
-        data_index = (data_index + 1) % 40;
-        if (data_index == 0)
-        {
-            valid = 0;
-            compose_remote_data();
-        }
+        receiving = 0;
     }
 }
 
@@ -62,17 +59,13 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if (HAL_GPIO_ReadPin(RF_SIG_GPIO_Port, RF_SIG_Pin) == GPIO_PIN_RESET)
     {
-        HAL_TIM_Base_Stop(&htim1);
-        high_dur = htim1.Instance->CNT;
-        htim1.Instance->CNT = 0;
-        HAL_TIM_Base_Start(&htim1);
-        remote_received_high_pulse();
+        high_pulse = __HAL_TIM_GetCounter(&htim1);
+        __HAL_TIM_SetCounter(&htim1, 0);
+        remote_receive_high_pulse();
     }
     else
     {
-        HAL_TIM_Base_Stop(&htim1);
-        low_dur = htim1.Instance->CNT;
-        htim1.Instance->CNT = 0;
-        HAL_TIM_Base_Start(&htim1);
+        low_pulse = __HAL_TIM_GetCounter(&htim1);
+        __HAL_TIM_SetCounter(&htim1, 0);
     }
 }
